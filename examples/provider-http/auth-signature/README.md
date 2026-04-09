@@ -21,7 +21,14 @@ This example demonstrates how to setup authentication with an http provider usin
 npm install
 ```
 
-2. Start the server:
+2. Generate a local signing keypair (do not commit these files):
+
+```bash
+openssl genrsa -out private_key.pem 2048
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+```
+
+3. Start the server:
 
 ```bash
 npm start
