@@ -1,0 +1,18 @@
+<svg width="720" height="180" viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="howeverpromptfoo logo">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1D3A"/>
+      <stop offset="100%" stop-color="#1F5AA6"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#15B7FF"/>
+      <stop offset="100%" stop-color="#5AE0A1"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="720" height="180" rx="24" fill="url(#g1)"/>
+  <rect x="28" y="28" width="124" height="124" rx="20" fill="#0E2D57"/>
+  <path d="M52 114 L90 66 L128 114" stroke="url(#g2)" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="90" cy="102" r="10" fill="#5AE0A1"/>
+  <text x="178" y="88" fill="#FFFFFF" font-size="42" font-family="SF Pro Display, Segoe UI, Arial, sans-serif" font-weight="700">howeverpromptfoo</text>
+  <text x="180" y="124" fill="#B7D7FF" font-size="20" font-family="SF Pro Display, Segoe UI, Arial, sans-serif">LLM 评测与红队测试工程版</text>
+</svg>

@@ -1,0 +1,13 @@
+description: 'Local model end-to-end scenario'
+providers:
+  - id: ollama:llama3.1
+    config:
+      apiBaseUrl: '${OLLAMA_BASE_URL}'
+prompts:
+  - '请根据问题给出简洁结论：{{query}}'
+tests:
+  - vars:
+      query: '说明如何安全地管理 API Key'
+    assert:
+      - type: contains
+        value: 'API Key'

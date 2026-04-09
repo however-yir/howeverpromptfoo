@@ -1,0 +1,14 @@
+{
+  "policyVersion": 1,
+  "description": "Core dependency major version freeze policy for howeverpromptfoo",
+  "coreDependencies": {
+    "openai": "^6.33.0",
+    "commander": "^14.0.3",
+    "zod": "^4.3.6",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.0"
+  }
+}

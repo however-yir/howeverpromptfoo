@@ -1,0 +1,14 @@
+description: 'Cloud model end-to-end scenario'
+providers:
+  - id: openai:gpt-5-mini
+    config:
+      apiBaseUrl: '${HOWEVER_OPENAI_BASE_URL}'
+      apiKeyEnvar: OPENAI_API_KEY
+prompts:
+  - '你是工程架构顾问。问题：{{query}}'
+tests:
+  - vars:
+      query: '如何设计大模型评测流水线'
+    assert:
+      - type: contains
+        value: '评测'

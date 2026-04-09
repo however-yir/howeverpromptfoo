@@ -1,0 +1,101 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: Long-horizon OpenAI Agents Python SDK with Promptfoo tracing
+
+prompts:
+  - '{{task}}'
+
+providers:
+  - id: file://agent_provider.py:call_api
+    label: OpenAI Agents Python SDK
+    config:
+      model: gpt-5.4-mini
+      max_turns: 8
+      otlp_endpoint: http://localhost:4318
+
+tests:
+  - description: Long-horizon booking change followed by a policy question
+    vars:
+      task: Complete the booking change and answer the follow-up policy question.
+      steps_json: |
+        [
+          "My name is Ada Lovelace and my confirmation number is ABC123.",
+          "Move me to seat 14C.",
+          "Also, what is the baggage allowance?"
+        ]
+    metadata:
+      testCaseId: openai-agents-python-long-horizon
+    assert:
+      - type: contains
+        value: Seat updated to 14C
+      - type: contains
+        value: '"seat_number": "14C"'
+      - type: contains
+        value: 50 pounds
+      - type: trajectory:tool-used
+        value:
+          - lookup_reservation
+          - update_seat
+          - faq_lookup
+      - type: trajectory:tool-args-match
+        value:
+          name: lookup_reservation
+          args:
+            confirmation_number: ABC123
+          mode: partial
+      - type: trajectory:tool-args-match
+        value:
+          name: update_seat
+          args:
+            confirmation_number: ABC123
+            new_seat: 14C
+          mode: partial
+      - type: trajectory:tool-sequence
+        value:
+          steps:
+            - lookup_reservation
+            - update_seat
+            - faq_lookup
+      - type: trajectory:step-count
+        value:
+          type: span
+          pattern: 'agent *'
+          min: 3
+      - type: trace-span-count
+        value:
+          pattern: 'handoff *'
+          min: 2
+      - type: trace-error-spans
+        value:
+          max_count: 0
+      - type: trajectory:goal-success
+        provider: openai:gpt-5.4-mini
+        value: Move the passenger with confirmation ABC123 to seat 14C and answer the baggage policy question correctly.
+
+  - description: FAQ-only request should not change the booking
+    vars:
+      task: Answer a policy question without editing the booking.
+      steps_json: |
+        [
+          "Do you offer wifi on the flight?"
+        ]
+    metadata:
+      testCaseId: openai-agents-python-faq-only
+    assert:
+      - type: contains
+        value: Promptfoo-Air
+      - type: trajectory:tool-used
+        value: faq_lookup
+      - type: not-trajectory:tool-used
+        value: update_seat
+      - type: trace-error-spans
+        value:
+          max_count: 0
+
+tracing:
+  enabled: true
+  otlp:
+    http:
+      enabled: true
+      port: 4318
+      # The SDK bridge exports OTLP/JSON; the Python wrapper exporter uses OTLP/protobuf by default.
+      acceptFormats: ['json', 'protobuf']

@@ -1,0 +1,17 @@
+description: 'Hybrid local + cloud model end-to-end scenario'
+providers:
+  - id: openai:gpt-5-mini
+    config:
+      apiBaseUrl: '${HOWEVER_OPENAI_BASE_URL}'
+      apiKeyEnvar: OPENAI_API_KEY
+  - id: ollama:llama3.1
+    config:
+      apiBaseUrl: '${OLLAMA_BASE_URL}'
+prompts:
+  - '回答问题并给出一个可执行步骤：{{query}}'
+tests:
+  - vars:
+      query: '如何把 red team 扫描接入 CI'
+    assert:
+      - type: contains
+        value: 'CI'

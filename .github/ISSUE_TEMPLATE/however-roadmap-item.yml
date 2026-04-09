@@ -1,0 +1,35 @@
+name: however roadmap item
+description: 创建路线图任务（30/60/90 天）
+title: '[Roadmap] '
+labels:
+  - roadmap
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: 路线图阶段
+      options:
+        - 30 days
+        - 60 days
+        - 90 days
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: 目标
+      description: 该任务要达成的业务或工程目标
+    validations:
+      required: true
+  - type: textarea
+    id: deliverable
+    attributes:
+      label: 交付物
+      description: 代码、文档、配置或测试的具体产出
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: 风险与回滚
+      description: 风险点和回滚计划
