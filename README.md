@@ -1,12 +1,12 @@
-# howeverpromptfoo
+# howeverpromptfoo（LLM Evals & Red Team 工程）
 
 <p align="center">
   <img src="docs/assets/howeverpromptfoo-logo.svg" alt="howeverpromptfoo logo" width="760" />
 </p>
 
 <p align="center">
-  面向真实业务落地的 LLM 评测与红队测试工程仓。<br/>
-  目标是把“能对话”升级为“可评估、可对比、可审计、可回归”的 AI 应用交付链路。
+  面向真实业务落地的 LLM 评测与红队测试工程仓，<br/>
+  提供可评估、可对比、可审计、可回归的 AI 应用交付链路。
 </p>
 
 <p align="center">
