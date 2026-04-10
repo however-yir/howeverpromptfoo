@@ -56,3 +56,13 @@ code-scan-action/dist/test.mp4
 
 *storybook.log
 storybook-static
+
+# --- Baseline Ignore Rules ---
+*.iml
+__pycache__/
+*.py[cod]
+.env.*
+node_modules/
+dist/
+build/
+target/
