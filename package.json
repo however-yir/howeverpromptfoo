@@ -2,7 +2,7 @@
   "name": "@however-yir/howeverpromptfoo",
   "description": "HoweverPromptfoo: 企业级 LLM 评测与红队测试工程套件",
   "author": "however-yir (however-yir)",
-  "version": "0.121.3",
+  "version": "0.121.4",
   "license": "MIT",
   "type": "module",
   "repository": {

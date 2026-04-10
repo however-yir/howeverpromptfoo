@@ -16,6 +16,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - add security gates workflow, node matrix workflow, and localized contribution/release docs
 
+## [0.121.4](https://github.com/however-yir/howeverpromptfoo/compare/0.121.3...0.121.4) (2026-04-10)
+
+
+### Features
+
+* **core:** deliver core capability slice 4 [C04] ([904eb56](https://github.com/however-yir/howeverpromptfoo/commit/904eb566545828b8ee8fed3c0f47da8c27081021))
+* **core:** deliver core capability slice 5 [C05] ([793494f](https://github.com/however-yir/howeverpromptfoo/commit/793494ffd667d8f70a3db7fc120712579bebbb0e))
+* **core:** deliver core capability slice 6 [C06] ([1e83601](https://github.com/however-yir/howeverpromptfoo/commit/1e8360154379fbb1f2b92aa2872fa540945768fe))
+* **core:** deliver core capability slice 7 [C07] ([2922f7e](https://github.com/however-yir/howeverpromptfoo/commit/2922f7e5106486552ca2805b62c7e4fa5f315caf))
+* **core:** deliver core capability slice 8 [C08] ([187d474](https://github.com/however-yir/howeverpromptfoo/commit/187d474b87c8ede9f3bab4de835bdd18e43b35f6))
+
+
+### Bug Fixes
+
+* **core:** resolve regression and edge case 10 [C10] ([ee0778f](https://github.com/however-yir/howeverpromptfoo/commit/ee0778f1afc486268c286f853b821265fb076bde))
+* **core:** resolve regression and edge case 9 [C09] ([4c53de8](https://github.com/however-yir/howeverpromptfoo/commit/4c53de8b2d7ac3abd54e8352ecc38d4397f6a2cb))
+
 ## [0.121.3](https://github.com/promptfoo/promptfoo/compare/0.121.2...0.121.3) (2026-03-24)
 
 ### Features
